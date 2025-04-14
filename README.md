@@ -1,4 +1,4 @@
-# System Monitoring GUI with Tkinter & Psutil
+# System Monitoring
 
 ## Project Overview
 This project is a lightweight **System Monitoring GUI** built using **Python**, leveraging the `psutil` and `tkinter` libraries. It presents system resource usage such as CPU, RAM, and temperature in a clean, table-like format using the `ttk.Treeview` widget. The UI is styled to resemble a command-line interface, with a sleek black background and white text.
