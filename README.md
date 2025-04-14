@@ -1,60 +1,59 @@
-# System Monitoring
+# System Process Monitor
 
-## Project Overview
-This project is a lightweight **System Monitoring GUI** built using **Python**, leveraging the `psutil` and `tkinter` libraries. It presents system resource usage such as CPU, RAM, and temperature in a clean, table-like format using the `ttk.Treeview` widget. The UI is styled to resemble a command-line interface, with a sleek black background and white text.
+## Overview
+The System Process Monitor is a Python-based desktop application that utilizes Tkinter for GUI and Psutil for real-time system monitoring. It provides an intuitive interface for users to view currently running processes along with their CPU and RAM usage. Additionally, it displays hardware sensor information such as battery status and CPU temperature (if supported).
 
 ## Purpose
-The main goal of this project is to create an intuitive visual tool for monitoring real-time system performance in a way that is both informative and accessible. It was developed as part of the **Induction Task for ARC - Automation & Robotics Club**, to showcase programming skills, UI/UX design, and system-level interfacing using Python.
-
-## Features
-- Displays running system processes in a tabular view
-- Shows CPU and memory usage for each process
-- Optionally shows system temperature (if supported by hardware)
-- Periodic refresh of process data for real-time updates
-- UI designed to resemble a black command prompt
-- Scrollable and resizable table
-- Custom column alignment and styling
+This project was developed as a part of the induction process for ARC (Automation & Robotics Club). Its main goal is to demonstrate proficiency in Python GUI development and system-level monitoring by building a useful and elegant tool for system diagnostics.
 
 ## Objectives
-- Understand and utilize system-level libraries like `psutil`
-- Build a responsive GUI using `tkinter` and `ttk`
-- Present real-time data in an intuitive and visually appealing format
-- Explore data formatting and tree view customization in Python
-- Demonstrate readiness for the ARC club by applying automation and interfacing concepts
+- Monitor system processes in real time.
+- Display key resource usage metrics: CPU and RAM usage.
+- Display hardware sensor data such as battery percentage and temperature.
+- Build an intuitive and minimal black-themed user interface.
+- Package the Python application into a standalone executable for easy sharing.
 
-## Tools & Technologies Used
-- **Python 3.x**
-- **psutil** - for system and process data
-- **tkinter / ttk** - for the graphical user interface
+## Features
+- Real-time updates of system processes.
+- Displays process name, CPU usage, and RAM usage.
+- Shows battery status (percentage and charging state).
+- Displays temperature readings (if supported).
+- Modern command-line-like UI with black background and white text.
+- Available as a standalone executable (.exe) for Windows users.
 
-## Principle Behind the Project
-This project relies on the principle of **polling system data** at regular intervals using `psutil`, and updating the `Treeview` to reflect changes in real time. By abstracting hardware-level stats into an easy-to-read table, it emphasizes the core goals of automation and monitoring — key principles in robotics and system control.
+## Tools and Technologies Used
+- **Python**: Core programming language.
+- **Tkinter**: GUI development.
+- **Psutil**: For accessing system and process information.
+- **PyInstaller**: For converting Python script to executable.
+
+## Principle of Working
+The application uses `psutil.process_iter()` to fetch active processes and their CPU and memory usage. It updates the TreeView widget every few seconds to reflect real-time data. Battery and temperature details are retrieved using `psutil.sensors_battery()` and `psutil.sensors_temperatures()` respectively. The GUI is designed using `Tkinter` and `ttk` widgets styled to simulate a terminal look.
 
 ## How to Use
-1. **Install Requirements:**
-    ```bash
-    pip install psutil
-    ```
+### Running from Python
+1. Ensure Python is installed on your system.
+2. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. Run the application:
+   ```bash
+   python system_monitor.py
+   ```
 
-2. **Run the Script:**
-    ```bash
-    python system_monitor.py
-    ```
-
-3. **Interact with the Interface:**
-   - View running processes
-   - Monitor their CPU and memory usage
-   - Scroll through the list and observe real-time updates
-
-> Note: Temperature data may only appear on systems with supported sensors.
+### Running Executable
+1. Navigate to the `dist` folder.
+2. Double-click the `SystemMonitor.exe` file.
+3. The application will open without needing Python installed.
 
 ## Future Enhancements
-- Add sorting functionality to the table columns
-- Add search/filter box to look up specific processes
-- Include disk and network usage stats
-- Add graph widgets for CPU/RAM over time
-- Export process data to a CSV or log file
-- Integrate dark mode toggle or user themes
-- Add performance alerts or threshold warnings
+- Add sorting and filtering capabilities for processes.
+- Include more system metrics like disk usage and network activity.
+- Provide logs or reports for monitored sessions.
+- Add a search bar to quickly locate specific processes.
+- Build cross-platform support and compatibility.
 
----
+## Contribution
+This project was developed as an individual contribution for ARC club induction, demonstrating system-level programming, GUI development, and software packaging.
+
