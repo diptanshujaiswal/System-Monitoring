@@ -1,0 +1,19 @@
+# Python cache and logs
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# PyInstaller
+*.spec
+build/
+dist/
+*.exe
+
+# IDE specific (optional)
+.vscode/
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
